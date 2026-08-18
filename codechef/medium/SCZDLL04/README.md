@@ -4,53 +4,55 @@
 
 ## Problem
 
-### Validating a Circle Object
+### Validating Employee Salary
+- Let's practice validating object creation. In real-world applications, employee data must be validated before storing it. Specifically, an employee's salary should never be negative, as it represents an invalid or corrupt data entry.
+- We'll create an Employee class and ensure that an employee can only be created with a non-negative salary to ensure data integrity, constructors should include validation logic to catch such errors during object creation.
 
-Let's solidify your understanding of  **validating object creation**  with a worked-out example. We're creating a `Circle`  **class**  and ensuring that a circle can only be created with a positive radius.
+ **Task to Perform:** 
 
- **Working of example:** 
+- Inside the constructor of Employee class, validate that the salary is not negative.
+- If it is, throw an IllegalArgumentException with a relevant message.
 
-- This program demonstrates object creation with validation using exception handling.
-- The Circle class has a private radius field and a constructor that throws an IllegalArgumentException if the radius is zero or negative, ensuring only valid circles are created.
-- The getRadius method returns the radius value.
-- In the Main class, Circle objects are created inside a try block. If an invalid radius is passed, the exception is caught, and an error message is displayed using the catch block. This ensures the program doesn't crash and handles invalid input gracefully.
+ **Expected Output** 
+
+```
+Employee 1 Salary: 50000.0
+Exception caught: Salary must be non-negative.
+
+```
 
 ## Solution
 
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-18T17:27:07.742Z  
+**Submitted:** 2026-08-18T17:27:18.208Z  
 
 ```java
-class Circle {
-    private double radius;
+class Employee {
+    private double salary;
 
-    public Circle(double radius) throws IllegalArgumentException {
-        if (radius <= 0) {
-            throw new IllegalArgumentException("Radius must be positive.");
+    public Employee(double salary) {
+        if (salary < 0) {
+            throw new IllegalArgumentException("Salary must be non-negative.");
         }
-        this.radius = radius;
+        this.salary = salary;
     }
 
-    public double getRadius() {
-        return radius;
+    public double getSalary() {
+        return salary;
     }
-}
 
-public class Main {
     public static void main(String[] args) {
         try {
-            Circle circle1 = new Circle(5.0);
-            System.out.println("Circle created with radius: " + circle1.getRadius());
+            Employee employee1 = new Employee(50000.0);
+            System.out.println("Employee 1 Salary: " + employee1.getSalary());
 
-            Circle circle2 = new Circle(-2.0); // This will throw an exception
-            System.out.println("Circle created with radius: " + circle2.getRadius()); // This line won't be executed
+            Employee employee2 = new Employee(-1000.0);
+            System.out.println("Employee 2 Salary: " + employee2.getSalary()); // This line should not be reached
 
-            Circle circle3 = new Circle(0.0); // This will throw an exception
-            System.out.println("Circle created with radius: " + circle3.getRadius()); // This line won't be executed
         } catch (IllegalArgumentException e) {
-            System.out.println("Error creating circle: " + e.getMessage());
+            System.out.println("Exception caught: " + e.getMessage());
         }
     }
 }
