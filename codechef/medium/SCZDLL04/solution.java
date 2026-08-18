@@ -1,31 +1,27 @@
-class Circle {
-    private double radius;
+class Employee {
+    private double salary;
 
-    public Circle(double radius) throws IllegalArgumentException {
-        if (radius <= 0) {
-            throw new IllegalArgumentException("Radius must be positive.");
+    public Employee(double salary) {
+        if (salary < 0) {
+            throw new IllegalArgumentException("Salary must be non-negative.");
         }
-        this.radius = radius;
+        this.salary = salary;
     }
 
-    public double getRadius() {
-        return radius;
+    public double getSalary() {
+        return salary;
     }
-}
 
-public class Main {
     public static void main(String[] args) {
         try {
-            Circle circle1 = new Circle(5.0);
-            System.out.println("Circle created with radius: " + circle1.getRadius());
+            Employee employee1 = new Employee(50000.0);
+            System.out.println("Employee 1 Salary: " + employee1.getSalary());
 
-            Circle circle2 = new Circle(-2.0); // This will throw an exception
-            System.out.println("Circle created with radius: " + circle2.getRadius()); // This line won't be executed
+            Employee employee2 = new Employee(-1000.0);
+            System.out.println("Employee 2 Salary: " + employee2.getSalary()); // This line should not be reached
 
-            Circle circle3 = new Circle(0.0); // This will throw an exception
-            System.out.println("Circle created with radius: " + circle3.getRadius()); // This line won't be executed
         } catch (IllegalArgumentException e) {
-            System.out.println("Error creating circle: " + e.getMessage());
+            System.out.println("Exception caught: " + e.getMessage());
         }
     }
 }
