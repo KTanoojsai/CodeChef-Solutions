@@ -4,50 +4,43 @@
 
 ## Problem
 
-### Display Employee Details
-- Let’s practice how to override the toString() method to produce meaningful and user-friendly output from objects.
-- In this problem, you are given an Employee class that stores details such as the employee’s name, ID, and designation. By default, printing an object would result in unhelpful output like Employee@15db9742.
-
-To make the output informative, your  **task**  is to  **override**  the `toString()` method so that it returns a well-formatted string showing the employee's information.
-
- **Expected Output:** 
-
-```
-Employee[name=Bob Smith, id=1001, designation=Software Engineer]
-
-```
+_Description not available._
 
 ## Solution
 
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-18T17:20:11.364Z  
+**Submitted:** 2026-08-18T17:19:58.973Z  
 
 ```java
-class Employee {
+class User {
+    // Attributes of the User class
     String name;
-    int id;
-    String designation;
+    String age;
 
-    public Employee(String name, int id, String designation) {
+    // Constructor to initialize User object
+    User(String name, String age) {
         this.name = name;
-        this.id = id;
-        this.designation = designation;
+        this.age = age;
     }
 
+    // Overriding toString() to provide custom string representation
     @Override
     public String toString() {
-        return "Employee[name=" + name + ", id=" + id + ", designation=" + designation + "]";
+        // Returning a formatted string with user details
+        return "User Details: { " + "Name: '" + name + "', " + "Age: '" + age + "' }";
     }
 }
 
 class Codechef {
     public static void main(String[] args) {
-
-        Employee employee1 = new Employee("Bob Smith", 1001, "Software Engineer");
+    
+        User user1 = new User("Alice", "25");
         
-        System.out.println(employee1);
+        // Printing the user1 object, which will invoke the toString() method
+        System.out.println(user1);
+
     }
 }
 ```
