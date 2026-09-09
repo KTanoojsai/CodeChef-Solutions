@@ -74,7 +74,7 @@ So, no solution exists.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T15:10:16.250Z  
+**Submitted:** 2026-09-09T15:10:52.866Z  
 
 ```java
 import java.util.*;
@@ -97,9 +97,9 @@ class Codechef
             int bcount=0;
             for(int i=0;i<s.length();i++)
             {
-                if(s.charAt[i]=='a')
+                if(s.charAt(i)=='a')
                     acount++;
-                if(s1.charAt[i]=='a')
+                if(s1.charAt(i)=='a')
                     bcount++;
             }
             if(acount+bcount==l)
