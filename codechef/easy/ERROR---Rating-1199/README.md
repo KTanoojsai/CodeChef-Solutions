@@ -56,7 +56,7 @@ The string contains both  **010**  and  **101**  as substrings.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T16:59:08.056Z  
+**Submitted:** 2026-09-09T17:00:04.027Z  
 
 ```java
 import java.util.*;
