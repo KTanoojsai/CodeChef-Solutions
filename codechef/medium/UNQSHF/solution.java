@@ -18,9 +18,9 @@ class Codechef
             int bcount=0;
             for(int i=0;i<s.length();i++)
             {
-                if(s.charAt[i]=='a')
+                if(s.charAt(i)=='a')
                     acount++;
-                if(s1.charAt[i]=='a')
+                if(s1.charAt(i)=='a')
                     bcount++;
             }
             if(acount+bcount==l)
