@@ -1,16 +1,22 @@
 public static int[] findPair(int[] nums, int target) {
-    // Write your code here
-    int l=0,r=nums.length;
-    for(int i=0;i<nums.length;i++)
-    {
-        if(nums[l]+nums[r]<target)
-        {
+
+    int l = 0;
+    int r = nums.length - 1;
+
+    while (l < r) {
+
+        int sum = nums[l] + nums[r];
+
+        if (sum == target) {
+            return new int[]{l,r};
+        }
+        else if (sum < target) {
             l++;
         }
-        if(nums[l]+nums[r]>target)
-        {
+        else {
             r--;
         }
     }
-    System.out.println(l,r);
+
+    return new int[]{-1, -1};
 }
