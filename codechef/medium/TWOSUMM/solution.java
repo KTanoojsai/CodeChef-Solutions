@@ -1,16 +1,21 @@
 public static int[] findPair(int[] nums, int target) {
 
-    HashMap<Integer, Integer> map = new HashMap<>();
+    int l = 0;
+    int r = nums.length - 1;
 
-    for (int i = 0; i < nums.length; i++) {
+    while (l < r) {
 
-        int required = target - nums[i];
+        int sum = nums[l] + nums[r];
 
-        if (map.containsKey(required)) {
-            return new int[]{map.get(required), i};
+        if (sum == target) {
+            return new int[]{l,r};
         }
-
-        map.put(nums[i], i);
+        else if (sum < target) {
+            l++;
+        }
+        else {
+            r--;
+        }
     }
 
     return new int[]{-1, -1};
