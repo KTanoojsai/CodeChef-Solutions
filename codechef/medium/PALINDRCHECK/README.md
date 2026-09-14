@@ -69,18 +69,16 @@ fun is Science Data
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-06T10:29:07.149Z  
+**Submitted:** 2026-09-14T09:55:41.715Z  
 
 ```java
 public static String reverseWords(String s) {
-    // write your code here 
-    String c[]=s.split(" ");
-    int left=0,right=c.length-1;
-    while(left<right)
-    {
-        String temp=c[left];
-        c[left]=c[right];
-        c[right]=temp;
+    String[] c = s.trim().split("\\s+");
+    int left = 0, right = c.length - 1;
+    while (left < right) {
+        String temp = c[left];
+        c[left] = c[right];
+        c[right] = temp;
         left++;
         right--;
     }
