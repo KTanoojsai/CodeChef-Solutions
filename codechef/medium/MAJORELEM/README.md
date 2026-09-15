@@ -61,27 +61,23 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-15T06:43:11.596Z  
+**Submitted:** 2026-09-15T06:44:10.377Z  
 
 ```java
 class Solution {
     public int majorityElement(int[] arr) {
         int candidate = 0;
         int count = 0;
-
-        // Find the possible majority element
         for (int num : arr) {
             if (count == 0) {
                 candidate = num;
             }
-
             if (num == candidate) {
                 count++;
             } else {
                 count--;
             }
         }
-
         return candidate;
     }
 }
