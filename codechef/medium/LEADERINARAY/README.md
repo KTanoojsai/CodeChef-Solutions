@@ -73,29 +73,27 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-15T06:32:19.149Z  
+**Submitted:** 2026-09-15T06:33:26.814Z  
 
 ```java
+import java.util.*;
 class Solution {
     public List<Integer> findLeaders(int[] nums) {
-        // write your code here 
-        List<Integer> l=new ArrayList<>();
-        if(nums == null||nums.length==0)
-            return l;
-        int r=nums[nums.length-1];
-        l.add(r);
-        for (int i = nums.length - 2; i >= 0; i--) {
-            if (nums[i] >= r) {
-                l.add(nums[i]);
-                r = nums[i];
+        List<Integer> leaders = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            return leaders;
+        }
+        int maxFromRight = Integer.MIN_VALUE;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] > maxFromRight) {
+                leaders.add(nums[i]);
+                maxFromRight = nums[i];
             }
         }
-        Collections.reverse(l);
-        return l;
+        Collections.reverse(leaders);
+        return leaders;
     }
 }
-
-
 ```
 
 ---
