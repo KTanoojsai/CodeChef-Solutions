@@ -13,10 +13,10 @@ class Codechef
             int n=sc.nextInt();
             int k=sc.nextInt();
             int val=Math.min(n,k)+1;
-            if(val==Math.Max(n.k))
-                System.out.println("Yes");
-            else
+            if(val==Math.max(n,k))
                 System.out.println("No");
+            else
+                System.out.println("Yes");
         }
 	}
 }
