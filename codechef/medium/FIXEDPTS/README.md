@@ -55,7 +55,7 @@ Yes
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-16T14:53:14.147Z  
+**Submitted:** 2026-09-16T14:53:51.349Z  
 
 ```java
 import java.util.*;
@@ -73,10 +73,10 @@ class Codechef
             int n=sc.nextInt();
             int k=sc.nextInt();
             int val=Math.min(n,k)+1;
-            if(val==Math.Max(n.k))
-                System.out.println("Yes");
-            else
+            if(val==Math.max(n,k))
                 System.out.println("No");
+            else
+                System.out.println("Yes");
         }
 	}
 }
