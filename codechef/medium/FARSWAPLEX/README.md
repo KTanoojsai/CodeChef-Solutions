@@ -56,7 +56,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-16T15:19:41.070Z  
+**Submitted:** 2026-09-16T15:21:48.330Z  
 
 ```java
 import java.util.*;
@@ -84,8 +84,11 @@ class Codechef
                     a[i]=a[i+1];
                     a[i+1]=temp;
                 }
+            }  
+            for (int i = 0; i < n; i++)
+            {
+                System.out.print(a[i] + " ");
             }
-            System.out.println(a.toString());
         }
 	}
 }
