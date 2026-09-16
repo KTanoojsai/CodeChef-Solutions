@@ -28,7 +28,6 @@ class Codechef
             {
                 System.out.print(a[i] + " ");
             }
-            System.out.println("");
         }
 	}
 }
