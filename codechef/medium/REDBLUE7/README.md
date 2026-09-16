@@ -56,7 +56,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-16T16:28:25.529Z  
+**Submitted:** 2026-09-16T16:29:10.636Z  
 
 ```java
 import java.util.*;
@@ -71,7 +71,6 @@ class Codechef
             int n = sc.nextInt();
             long[] a = new long[n];
             long total = 0;
-
             for (int i = 0; i < n; i++) {
                 a[i] = sc.nextLong();
                 total += a[i];
