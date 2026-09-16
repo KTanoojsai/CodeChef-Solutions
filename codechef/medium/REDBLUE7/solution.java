@@ -10,7 +10,6 @@ class Codechef
             int n = sc.nextInt();
             long[] a = new long[n];
             long total = 0;
-
             for (int i = 0; i < n; i++) {
                 a[i] = sc.nextLong();
                 total += a[i];
