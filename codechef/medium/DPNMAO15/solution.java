@@ -26,7 +26,7 @@ class Codechef
             count++;
         }
         for(int i=count;i<Math.max(m,n);i++){
-            if(m<n)
+            if(m>=n)
                 al.add(arr2[i]);
             else    
                 al.add(arr1[i]);
