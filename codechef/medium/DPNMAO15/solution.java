@@ -31,7 +31,7 @@ class Codechef
             else if(m>n)   
                 al.add(arr1[i]);
             else
-                break;
+                continue;
         }
         Collections.sort(al);
         for(int x: al)
