@@ -26,10 +26,12 @@ class Codechef
             count++;
         }
         for(int i=count;i<Math.max(m,n);i++){
-            if(n<=m)
+            if(m<n)
                 al.add(arr2[i]);
-            else    
+            else if(m>n)   
                 al.add(arr1[i]);
+            else
+                continue;
         }
         Collections.sort(al);
         for(int x: al)
