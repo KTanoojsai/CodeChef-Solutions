@@ -50,7 +50,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-19T18:27:32.513Z  
+**Submitted:** 2026-09-19T18:28:19.473Z  
 
 ```java
 import java.util.*;
@@ -86,7 +86,7 @@ class Codechef
             else if(m>n)   
                 al.add(arr1[i]);
             else
-                break;
+                continue;
         }
         Collections.sort(al);
         for(int x: al)
