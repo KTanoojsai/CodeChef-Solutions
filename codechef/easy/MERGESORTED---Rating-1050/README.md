@@ -52,7 +52,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-20T05:13:59.271Z  
+**Submitted:** 2026-09-20T05:14:14.987Z  
 
 ```java
 import java.util.*;
@@ -76,10 +76,9 @@ class Codechef
 		    narr[i]=sc.nextInt();
 		}
 		ArrayList<Integer> al = new ArrayList<>();
-
         int i = 0;
         int j = 0;
-       while (i < m && j < n) {
+        while (i < m && j < n) {
             if (marr[i] <= narr[j]) {
                 al.add(marr[i]);
                 i++;
