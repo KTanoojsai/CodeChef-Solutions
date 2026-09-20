@@ -18,32 +18,23 @@ class Codechef
         for(int i=0;i<n;i++){
             arr2[i]=sc.nextInt();
         }
-        ArrayList <Integer>al=new ArrayList<>();
-        int i=0,j=0;
-        while(i<m && j<n){
-            if(arr1[i]<=arr2[j])
-            {
-                al.add(arr1[i]);
-                
-                i++;
-            }
-            else
-            {
-                al.add(arr2[j]);
-                j++;
-            }
-        }
-        while(i<m){
+        ArrayList<Integer>al=new ArrayList<>();
+        int count=0;
+        for(int i=0;i<Math.min(m,n);i++){
             al.add(arr1[i]);
-            i++;
+            al.add(arr2[i]);
+            count++;
         }
-        while(j<n)
+        for(int i=count;i<Math.max(m,n);i++){
+            if(m<=n)
+                al.add(arr2[i]);
+            else    
+                al.add(arr1[i]);
+        }
+        Collections.sort(al);
+        for(int x: al)
         {
-            al.add(arr2[j]);
-            j++;
-        }
-        for(int x:al){
-            System.out.print(x+" ");
+            System.out.print(x +" ");
         }
 	}
 }
