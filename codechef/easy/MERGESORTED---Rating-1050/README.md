@@ -52,7 +52,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-19T18:11:53.514Z  
+**Submitted:** 2026-09-20T05:13:59.271Z  
 
 ```java
 import java.util.*;
@@ -75,22 +75,27 @@ class Codechef
 		for(int i=0;i<n;i++){
 		    narr[i]=sc.nextInt();
 		}
-        ArrayList<Integer> al=new ArrayList<>();
-        int count=0;
-        for(int i=0;i<Math.min(m,n);i++)
-        {
-            al.add(marr[i]);
-            al.add(narr[i]);
-            count++;
-        }
-        for(int i=count;i<Math.max(m,n);i++)
-        {
-            if(m>n)
+		ArrayList<Integer> al = new ArrayList<>();
+
+        int i = 0;
+        int j = 0;
+       while (i < m && j < n) {
+            if (marr[i] <= narr[j]) {
                 al.add(marr[i]);
-            else
-                al.add(narr[i]);
+                i++;
+            } else {
+                al.add(narr[j]);
+                j++;
+            }
         }
-        Collections.sort(al);
+        while (i < m) {
+            al.add(marr[i]);
+            i++;
+        }
+        while (j < n) {
+            al.add(narr[j]);
+            j++;
+        }
         for(int x : al) {
             System.out.print(x + " ");
         }
