@@ -14,22 +14,8 @@ class Codechef
         {
             int n=sc.nextInt();
             int k=sc.nextInt();
-            int c=0;
-            while(n>0)
-            {
-                if(n==k)
-                {
-                    c++;
-                    continue;
-                }else
-                {
-                    c++;
-                    n--;
-                    k=2*k;
-                }
-                    
-            }
-            System.out.println(c);
+            int c=n+(n-1)/(k-1);
+                System.out.println(c);
         }
 
 	}
