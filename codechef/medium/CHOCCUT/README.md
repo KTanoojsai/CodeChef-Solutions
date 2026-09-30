@@ -54,7 +54,7 @@ No
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:52:59.046Z  
+**Submitted:** 2026-09-30T15:55:38.586Z  
 
 ```java
 import java.util.*;
@@ -72,7 +72,7 @@ class Codechef
         {
             int a=sc.nextInt();
             int b=sc.nextInt();
-            if((a+b)%2==0)
+            if((a%2==0 && b%2==0)||(a%2!=0 && b%2!=0))
                 System.out.println("No");
             else
                 System.out.println("Yes");
