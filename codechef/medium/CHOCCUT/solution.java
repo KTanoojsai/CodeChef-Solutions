@@ -13,10 +13,10 @@ class Codechef
         {
             int a=sc.nextInt();
             int b=sc.nextInt();
-            if(a%2==0 || b%2==0)
-                System.out.println("Yes");
-            else
+            if(a%2==0 && b%2==0)
                 System.out.println("No");
+            else
+                System.out.println("Yes");
         }
 	}
 }
