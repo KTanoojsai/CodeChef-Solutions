@@ -57,7 +57,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:32:09.419Z  
+**Submitted:** 2026-09-30T15:34:42.026Z  
 
 ```java
 import java.util.*;
@@ -73,7 +73,8 @@ class Codechef
         int b=sc.nextInt();
         int h=sc.nextInt();
         int c=sc.nextInt();
-        if(b%2==0)
+        
+        if(b%(h+c)==0)
             System.out.println(b-(h+c));
 	    else
 	        System.out.println(b-(h+c)-1);
