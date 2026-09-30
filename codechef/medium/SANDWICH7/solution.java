@@ -11,11 +11,8 @@ class Codechef
         int b=sc.nextInt();
         int h=sc.nextInt();
         int c=sc.nextInt();
-        
-        if(b%(h+c)==0)
-            System.out.println(b-(h+c));
-	    else
-	        System.out.println(b-(h+c)-1);
+        System.out.println(Math.min(b / 2, h + c));
+       
 	    
 	}
 }
