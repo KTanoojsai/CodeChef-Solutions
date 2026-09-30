@@ -57,7 +57,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:34:42.026Z  
+**Submitted:** 2026-09-30T15:35:57.503Z  
 
 ```java
 import java.util.*;
@@ -73,11 +73,8 @@ class Codechef
         int b=sc.nextInt();
         int h=sc.nextInt();
         int c=sc.nextInt();
-        
-        if(b%(h+c)==0)
-            System.out.println(b-(h+c));
-	    else
-	        System.out.println(b-(h+c)-1);
+        System.out.println(Math.min(b / 2, h + c));
+       
 	    
 	}
 }
