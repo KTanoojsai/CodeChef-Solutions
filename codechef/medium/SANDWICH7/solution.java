@@ -11,7 +11,8 @@ class Codechef
         int b=sc.nextInt();
         int h=sc.nextInt();
         int c=sc.nextInt();
-        if(b%2==0)
+        
+        if(b%(h+c)==0)
             System.out.println(b-(h+c));
 	    else
 	        System.out.println(b-(h+c)-1);
