@@ -23,6 +23,6 @@ class Codechef
             a=b;
             b=c;
         }
-        System.out.println(b);
+        System.out.println(a);
 	}
 }
