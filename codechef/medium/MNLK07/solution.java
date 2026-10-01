@@ -19,7 +19,7 @@ class Codechef
         }
         for(int i=1;i<n;i++)
         {
-            long c=a*b;
+            long c=a+b;
             a=b;
             b=c;
         }
