@@ -2,43 +2,32 @@ class Solution {
 
     public List<List<Integer>> primeFactorization(int[] numbers) {
         // write your code here 
-        int maxVal=0;
-        for(int num: numbers)
-        {
-            if(num>maxVal)
-                maxVal=num;
-        }
-        int spf[]=new int[maxVal+1];
-        for(int i=1;i<=maxVal;i++)
-        {
-            spf[i]=i;
-        }
-        for(int i=2;i*i<=maxVal;i++)
-        {
-            if(spf[i]==i)
-            {
-                for(int j=i*i;j<=maxVal;j+=i)
-                {
-                    if(spf[j]==j)
-                    {
-                        spf[j]=i;
-                    }
-                }
-            }
-        }
-        List<List<Integer>> l=new ArrayList<>();
-        for(int num:numbers)
+        List<List<Integer>> result=new ArrayList<>();
+        if(numbers == null)
+        return result;
+        for(int num : numbers)
         {
             List<Integer> factors=new ArrayList<>();
-            int temp =num;
-            while(temp > 1)
+            int temp=num;
+            while(temp%2==0)
             {
-                factors.add(spf[temp]);
-                temp/=spf[temp];
+                factors.add(2);
+                temp/=2;
             }
-            l.add(factors);
+            for(int d=3;(long) d*d<=temp;d+=2)
+            {
+                while(temp %d==0)
+                {
+                    factors.add(d);
+                    temp/=d;
+                }
+            }
+            if(temp>1)
+            {
+                factors.add(temp);
+            }
+            result.add(factors);
         }
-        return l;
-        
+        return result;
     }
 }
