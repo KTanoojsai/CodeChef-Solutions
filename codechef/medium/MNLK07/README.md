@@ -58,7 +58,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-01T09:36:00.869Z  
+**Submitted:** 2026-10-01T09:37:25.227Z  
 
 ```java
 import java.util.*;
@@ -82,7 +82,7 @@ class Codechef
         }
         for(int i=1;i<n;i++)
         {
-            long c=a*b;
+            long c=a+b;
             a=b;
             b=c;
         }
