@@ -1,0 +1,30 @@
+                                                                                                                                                                            const [board, setBoard] = useState(addRandomTile(addRandomTile(getEmptyBoard())));
+
+
+                                                                                                                                                                              const handleKeyDown = (e) => {
+                                                                                                                                                                                  let processedBoard;
+                                                                                                                                                                                      const currentBoardCopy = board.map(row => [...row]);
+
+                                                                                                                                                                                          if (e.key === 'ArrowLeft') processedBoard = moveLeft(currentBoardCopy);
+                                                                                                                                                                                              else if (e.key === 'ArrowRight') processedBoard = moveRight(currentBoardCopy);
+                                                                                                                                                                                                  else if (e.key === 'ArrowUp') processedBoard = moveUp(currentBoardCopy);
+                                                                                                                                                                                                      else if (e.key === 'ArrowDown') processedBoard = moveDown(currentBoardCopy);
+                                                                                                                                                                                                          else return; // Not an arrow key
+
+                                                                                                                                                                                                              const boardWithNewTile = addRandomTile(processedBoard); // addRandomTile returns a new board
+                                                                                                                                                                                                                  setBoard(boardWithNewTile);
+                                                                                                                                                                                                                    };
+
+                                                                                                                                                                                                                      useEffect(() => {
+                                                                                                                                                                                                                          window.addEventListener('keydown', handleKeyDown);
+                                                                                                                                                                                                                              return () => window.removeEventListener('keydown', handleKeyDown);
+                                                                                                                                                                                                                                },); 
+
+
+                                                                                                                                                                                                                                  return (
+                                                                                                                                                                                                                                      <div className="container">
+                                                                                                                                                                                                                                            <h1>2048 Game</h1>
+                                                                                                                                                                                                                                                  {/* Removed onClick from board for this step, focusing on keyboard controls */}
+                                                                                                                                                                                                                                                        <div className="board">
+                                                                                                                                                                                                                                                                {board.map((row, rowIndex) => (
+                                                                                                                                                                                                                                                                          <div key={rowIndex} className="row">
