@@ -69,7 +69,7 @@ No number in the array has a digit sum equal to $17$, so the answer is $-1$.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-09T16:24:50.620Z  
+**Submitted:** 2026-10-18T17:31:39.510Z  
 
 ```java
 import java.util.*;
