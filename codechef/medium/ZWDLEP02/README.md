@@ -68,35 +68,38 @@ This structure supports both browser-based and API-based feedback collection —
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-20T12:59:55.987Z  
+**Submitted:** 2026-11-07T14:10:40.599Z  
 
 ```cpp
 const express = require('express');
+const path = require('path');
 const app = express();
-const port = 3000;
 
-// Middleware to parse URL-encoded form data and JSON payloads
+// Middleware to parse URL-encoded form data
 app.use(express.urlencoded({ extended: false }));
+
+// Middleware to parse JSON data
 app.use(express.json());
 
-// Route to handle HTML form submissions
-app.post('/submit-feedback-form', (req, res) => {
-  console.log('Form data received:');
-    console.log(req.body);
-      res.send('Feedback form data received!');
-      });
+// Serve static files (like feedback.html)
+app.use(express.static(path.join(__dirname, 'public')));
 
-      // Route to handle JSON submissions
-      app.post('/submit-feedback-json', (req, res) => {
-        console.log('JSON data received:');
-          console.log(req.body);
-            res.json({ message: 'Feedback JSON data received!' });
+app.post('/submit-feedback-form', (req, res) => {
+    console.log('Form data received:');
+        console.log(req.body);
+            res.send('Feedback form data received!');
             });
 
-            // Start the server
-            app.listen(port, () => {
-              console.log(`Server running on port ${port}`);
-              });
+            app.post('/submit-feedback-json', (req, res) => {
+                console.log('JSON data received:');
+                    console.log(req.body);
+                        res.json({ message: 'Feedback JSON data received!' });
+                        });
+
+                        const PORT = 3000;
+                        app.listen(PORT, () => {
+                            console.log(`Server listening on port ${PORT}`);
+                            });
 ```
 
 ---
