@@ -54,19 +54,29 @@ Install the ejs dependency using the terminal.(Shortcut for terminal is  **crtl+
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-20T12:59:30.349Z  
+**Submitted:** 2026-11-08T21:28:54.486Z  
 
 ```cpp
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My First EJS Page</title>
-</head>
-<body>
-    <h1>Welcome to my website!</h1>
-</body>
-</html>
+const express = require('express');
+const path = require('path');
+const app = express();
 
+// Set EJS as the templating engine
+app.set('view engine', 'ejs');
+
+// Set the views directory
+app.set('views', path.join(__dirname, 'views'));
+
+// Define a route for the homepage
+app.get('/', (req, res) => {
+    res.render('index');
+    });
+
+    // Start the server
+    const port = 3000;
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`);
+        });
 ```
 
 ---
